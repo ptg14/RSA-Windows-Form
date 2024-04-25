@@ -1,0 +1,16 @@
+D:\VS\RSA_WF\bin\x64\Debug\net8.0-windows\RSA_WF.exe
+D:\VS\RSA_WF\bin\x64\Debug\net8.0-windows\RSA_WF.deps.json
+D:\VS\RSA_WF\bin\x64\Debug\net8.0-windows\RSA_WF.runtimeconfig.json
+D:\VS\RSA_WF\bin\x64\Debug\net8.0-windows\RSA_WF.dll
+D:\VS\RSA_WF\bin\x64\Debug\net8.0-windows\RSA_WF.pdb
+D:\VS\RSA_WF\obj\x64\Debug\net8.0-windows\RSA_WF.RSA.resources
+D:\VS\RSA_WF\obj\x64\Debug\net8.0-windows\RSA_WF.csproj.GenerateResource.cache
+D:\VS\RSA_WF\obj\x64\Debug\net8.0-windows\RSA_WF.GeneratedMSBuildEditorConfig.editorconfig
+D:\VS\RSA_WF\obj\x64\Debug\net8.0-windows\RSA_WF.AssemblyInfoInputs.cache
+D:\VS\RSA_WF\obj\x64\Debug\net8.0-windows\RSA_WF.AssemblyInfo.cs
+D:\VS\RSA_WF\obj\x64\Debug\net8.0-windows\RSA_WF.csproj.CoreCompileInputs.cache
+D:\VS\RSA_WF\obj\x64\Debug\net8.0-windows\RSA_WF.dll
+D:\VS\RSA_WF\obj\x64\Debug\net8.0-windows\refint\RSA_WF.dll
+D:\VS\RSA_WF\obj\x64\Debug\net8.0-windows\RSA_WF.pdb
+D:\VS\RSA_WF\obj\x64\Debug\net8.0-windows\RSA_WF.genruntimeconfig.cache
+D:\VS\RSA_WF\obj\x64\Debug\net8.0-windows\ref\RSA_WF.dll
