@@ -9,4 +9,10 @@
     <Platforms>x64</Platforms>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Update="RSA_DLL.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

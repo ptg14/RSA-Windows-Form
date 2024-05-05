@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RSA_WF")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c6afd5be4f3050323cc3cc71bf115486fa30b816")]
 [assembly: System.Reflection.AssemblyProductAttribute("RSA_WF")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RSA_WF")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

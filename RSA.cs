@@ -8,6 +8,11 @@ namespace RSA_WF
         {
             InitializeComponent();
 
+            comboBox_keySize.SelectedIndex = 0;
+            comboBox_format.SelectedIndex = 0;
+            comboBox_enc_format.SelectedIndex = 0;
+            comboBox_dec_format.SelectedIndex = 0;
+
             originalWidth = Width;
             originalGenKeyLocation = groupBox_genKey.Location;
             originalDecryptLocation = groupBox_decrypt.Location;
@@ -60,10 +65,14 @@ namespace RSA_WF
                 }
 
                 // Update the TextBoxes with the full paths
-                textBox_privateKey.Text = Path.Combine(Application.StartupPath, privateKeyFile);
-                textBox_publicKey.Text = Path.Combine(Application.StartupPath, publicKeyFile);
+                string privateKeyPath = Path.Combine(Application.StartupPath, privateKeyFile);
+                string publicKeyPath = Path.Combine(Application.StartupPath, publicKeyFile);
+                textBox_privateKey.Text = privateKeyPath;
+                textBox_publicKey.Text = privateKeyPath;
 
-                richTextBox_log.Text += "RSA keys generated and saved successfully.\n";
+                richTextBox_log.Text += "Saved private key to file: " + privateKeyPath + "\n";
+                richTextBox_log.Text += "Saved public key to file: " + publicKeyPath + "\n";
+                richTextBox_log.Text += "~~RSA keys generated and saved successfully.~~\n";
             }
             catch (Exception ex)
             {
@@ -137,49 +146,41 @@ namespace RSA_WF
 
         private void button_enc_plaintext_Click(object sender, EventArgs e)
         {
-            // Check if the textBox_enc_plaintext is empty
-            if (string.IsNullOrEmpty(textBox_enc_plainText.Text))
+            // Create an OpenFileDialog
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+
+            // Set the initial directory and filter
+            openFileDialog.InitialDirectory = Application.StartupPath;
+            openFileDialog.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*";
+
+            // Show the OpenFileDialog and check if a file was selected
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
-                // Create an OpenFileDialog
-                OpenFileDialog openFileDialog = new OpenFileDialog();
+                // Set the textBox_enc_plaintext to the selected file path
+                textBox_enc_plainText.Text = openFileDialog.FileName;
 
-                // Set the initial directory and filter
-                openFileDialog.InitialDirectory = Application.StartupPath;
-                openFileDialog.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*";
+                // Read the contents of the file
+                string fileContents = File.ReadAllText(openFileDialog.FileName);
 
-                // Show the OpenFileDialog and check if a file was selected
-                if (openFileDialog.ShowDialog() == DialogResult.OK)
-                {
-                    // Set the textBox_enc_plaintext to the selected file path
-                    textBox_enc_plainText.Text = openFileDialog.FileName;
-
-                    // Read the contents of the file
-                    string fileContents = File.ReadAllText(openFileDialog.FileName);
-
-                    // Display the contents in the RichTextBox
-                    richTextBox_enc_plainText.Clear();
-                    richTextBox_enc_plainText.Text = fileContents;
-                }
+                // Display the contents in the RichTextBox
+                richTextBox_enc_plainText.Clear();
+                richTextBox_enc_plainText.Text = fileContents;
             }
         }
 
         private void button_enc_publicKey_Click(object sender, EventArgs e)
         {
-            // Check if the textBox_enc_plaintext is empty
-            if (string.IsNullOrEmpty(textBox_enc_publicKey.Text))
+            // Create an OpenFileDialog
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+
+            // Set the initial directory and filter
+            openFileDialog.InitialDirectory = Application.StartupPath;
+
+            // Show the OpenFileDialog and check if a file was selected
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
-                // Create an OpenFileDialog
-                OpenFileDialog openFileDialog = new OpenFileDialog();
-
-                // Set the initial directory and filter
-                openFileDialog.InitialDirectory = Application.StartupPath;
-
-                // Show the OpenFileDialog and check if a file was selected
-                if (openFileDialog.ShowDialog() == DialogResult.OK)
-                {
-                    // Set the textBox_enc_publicKey to the selected file path
-                    textBox_enc_publicKey.Text = openFileDialog.FileName;
-                }
+                // Set the textBox_enc_publicKey to the selected file path
+                textBox_enc_publicKey.Text = openFileDialog.FileName;
             }
         }
 
@@ -250,7 +251,7 @@ namespace RSA_WF
 
                 textBox_enc_ciphert.Text = Path.Combine(Application.StartupPath, ciphertFile);
 
-                richTextBox_log.Text += "Encrypt successfully.\n";
+                richTextBox_log.Text += "~~Encrypt successfully.~~\n";
             }
             catch (Exception ex)
             {
@@ -260,41 +261,33 @@ namespace RSA_WF
 
         private void button_dec_ciphert_Click(object sender, EventArgs e)
         {
-            // Check if the textBox_dec_ciphert is empty
-            if (string.IsNullOrEmpty(textBox_dec_ciphert.Text))
+            // Create an OpenFileDialog
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+
+            // Set the initial directory and filter
+            openFileDialog.InitialDirectory = Application.StartupPath;
+
+            // Show the OpenFileDialog and check if a file was selected
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
-                // Create an OpenFileDialog
-                OpenFileDialog openFileDialog = new OpenFileDialog();
-
-                // Set the initial directory and filter
-                openFileDialog.InitialDirectory = Application.StartupPath;
-
-                // Show the OpenFileDialog and check if a file was selected
-                if (openFileDialog.ShowDialog() == DialogResult.OK)
-                {
-                    // Set the textBox_enc_publicKey to the selected file path
-                    textBox_dec_ciphert.Text = openFileDialog.FileName;
-                }
+                // Set the textBox_enc_publicKey to the selected file path
+                textBox_dec_ciphert.Text = openFileDialog.FileName;
             }
         }
 
         private void button_dec_privateKey_Click(object sender, EventArgs e)
         {
-            // Check if the textBox_dec_privateKey is empty
-            if (string.IsNullOrEmpty(textBox_dec_privateKey.Text))
+            // Create an OpenFileDialog
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+
+            // Set the initial directory and filter
+            openFileDialog.InitialDirectory = Application.StartupPath;
+
+            // Show the OpenFileDialog and check if a file was selected
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
-                // Create an OpenFileDialog
-                OpenFileDialog openFileDialog = new OpenFileDialog();
-
-                // Set the initial directory and filter
-                openFileDialog.InitialDirectory = Application.StartupPath;
-
-                // Show the OpenFileDialog and check if a file was selected
-                if (openFileDialog.ShowDialog() == DialogResult.OK)
-                {
-                    // Set the textBox_enc_publicKey to the selected file path
-                    textBox_dec_privateKey.Text = openFileDialog.FileName;
-                }
+                // Set the textBox_enc_publicKey to the selected file path
+                textBox_dec_privateKey.Text = openFileDialog.FileName;
             }
         }
 
@@ -340,7 +333,7 @@ namespace RSA_WF
 
                 richTextBox_log.Text += "Saved plaintext decrypt to file: " + plaintextFilePath + "\n";
 
-                richTextBox_log.Text += "Decrypt successfully.\n";
+                richTextBox_log.Text += "~~Decrypt successfully.~~\n";
             }
             catch (Exception ex)
             {

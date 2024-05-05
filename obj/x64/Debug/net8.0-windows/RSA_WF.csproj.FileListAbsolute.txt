@@ -14,3 +14,4 @@ D:\VS\RSA_WF\obj\x64\Debug\net8.0-windows\refint\RSA_WF.dll
 D:\VS\RSA_WF\obj\x64\Debug\net8.0-windows\RSA_WF.pdb
 D:\VS\RSA_WF\obj\x64\Debug\net8.0-windows\RSA_WF.genruntimeconfig.cache
 D:\VS\RSA_WF\obj\x64\Debug\net8.0-windows\ref\RSA_WF.dll
+D:\VS\RSA_WF\obj\x64\Debug\net8.0-windows\RSA_WF.sourcelink.json

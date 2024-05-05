@@ -80,7 +80,6 @@
             comboBox_keySize.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox_keySize.FormattingEnabled = true;
             comboBox_keySize.Items.AddRange(new object[] { "1024", "2048", "3072", "4096" });
-            comboBox_keySize.SelectedIndex = 0;
             comboBox_keySize.Location = new Point(6, 46);
             comboBox_keySize.Name = "comboBox_keySize";
             comboBox_keySize.Size = new Size(142, 28);
@@ -91,7 +90,6 @@
             comboBox_format.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox_format.FormattingEnabled = true;
             comboBox_format.Items.AddRange(new object[] { "DER", "Base64" });
-            comboBox_format.SelectedIndex = 0;
             comboBox_format.Location = new Point(154, 46);
             comboBox_format.Name = "comboBox_format";
             comboBox_format.Size = new Size(148, 28);
@@ -250,7 +248,6 @@
             comboBox_enc_format.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox_enc_format.FormattingEnabled = true;
             comboBox_enc_format.Items.AddRange(new object[] { "DER", "Base64" });
-            comboBox_enc_format.SelectedIndex = 0;
             comboBox_enc_format.Location = new Point(6, 294);
             comboBox_enc_format.Name = "comboBox_enc_format";
             comboBox_enc_format.Size = new Size(117, 28);
@@ -268,6 +265,8 @@
             // 
             // richTextBox_log
             // 
+            richTextBox_log.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            richTextBox_log.Font = new Font("Segoe UI", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             richTextBox_log.Location = new Point(6, 241);
             richTextBox_log.Name = "richTextBox_log";
             richTextBox_log.Size = new Size(296, 90);
@@ -408,7 +407,6 @@
             comboBox_dec_format.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox_dec_format.FormattingEnabled = true;
             comboBox_dec_format.Items.AddRange(new object[] { "DER", "Base64" });
-            comboBox_dec_format.SelectedIndex = 0;
             comboBox_dec_format.Location = new Point(6, 294);
             comboBox_dec_format.Name = "comboBox_dec_format";
             comboBox_dec_format.Size = new Size(117, 28);

@@ -1,5 +1,7 @@
 ![image](https://github.com/ptg14/RSA-Windows-Form/assets/144470842/11c0b308-5969-431d-9b29-3e8314c13763)
 
+use "dotnet publish -r win-x64 -p:PublishSingleFile=true" to build the project as a single file executable for windows x64 platform
+use "dotnet publish -r win-x64 -p:PublishSingleFile=true --self-contained true" to build the project as a single file executable for windows x64 platform that don't have .NET installed
 
 File "RSA_DLL.dll" cần phải trong cùng thư mục với chương trình "RSA_WF.exe".
 
